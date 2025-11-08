@@ -150,10 +150,16 @@ class VectorKnowledgeUI:
 
                 # Cache stats
                 cache_stats = self.vector_db.get_cache_stats()
-                st.sidebar.metric("Cache Hit Rate", ".1%")
+                valid_entries = cache_stats.get('valid_cache_entries', 0)
+                total_cache_entries = cache_stats.get('query_cache_size', 0) + cache_stats.get('embedding_cache_size', 0)
+                if total_cache_entries:
+                    cache_hit_rate = min((valid_entries / total_cache_entries) * 100, 100.0)
+                else:
+                    cache_hit_rate = 0.0
+                st.sidebar.metric("Cache Hit Rate", f"{cache_hit_rate:.1f}%")
 
                 # Performance indicator
-                if cache_stats['valid_cache_entries'] > 0:
+                if valid_entries > 0:
                     st.sidebar.success("🟢 System Healthy")
                 else:
                     st.sidebar.warning("🟡 System Starting")
@@ -227,21 +233,22 @@ class VectorKnowledgeUI:
         """Execute search and display results"""
         with st.spinner("Searching knowledge base..."):
             try:
-                # Perform RAG query
+                start_time = time.perf_counter()
                 results = self.vector_db.rag_query(
                     query=query,
                     context_domain=domain,
                     top_k=top_k,
                     include_sources=include_sources
                 )
+                query_time = time.perf_counter() - start_time
 
                 # Display results
-                self._display_search_results(results, query)
+                self._display_search_results(results, query, query_time)
 
             except Exception as e:
                 st.error(f"Search failed: {e}")
 
-    def _display_search_results(self, results: Dict, query: str):
+    def _display_search_results(self, results: Dict, query: str, query_time: Optional[float] = None):
         """Display search results in a structured format"""
         if not results.get('context'):
             st.warning("No results found for the query")
@@ -259,10 +266,20 @@ class VectorKnowledgeUI:
 
             sources_df = []
             for source in results['sources']:
+                source_type = source.get('type', 'unknown')
+                score = source.get('score')
+                if isinstance(score, (int, float, np.floating)):
+                    score_value = f"{float(score):.3f}"
+                else:
+                    score_value = "N/A"
+                source_id = source.get('id')
+                if source_id is None:
+                    source_id = source.get('header', 'N/A')
+                source_id_display = str(source_id)
                 sources_df.append({
-                    'Type': source['type'].title(),
-                    'ID': source['id'],
-                    'Score': ".3f",
+                    'Type': source_type.title() if isinstance(source_type, str) else str(source_type),
+                    'ID': source_id_display,
+                    'Score': score_value,
                     'Details': self._format_source_details(source)
                 })
 
@@ -275,7 +292,8 @@ class VectorKnowledgeUI:
         with col2:
             st.metric("Sources Found", len(results.get('sources', [])))
         with col3:
-            st.metric("Query Time", ".2f")
+            query_time_display = f"{query_time:.2f}s" if query_time is not None else "—"
+            st.metric("Query Time", query_time_display)
 
     def _format_source_details(self, source: Dict) -> str:
         """Format source details for display"""
@@ -350,9 +368,15 @@ class VectorKnowledgeUI:
 
             cache_col1, cache_col2, cache_col3 = st.columns(3)
 
+            total_cache_entries = cache_stats.get('query_cache_size', 0) + cache_stats.get('embedding_cache_size', 0)
+            valid_cache_entries = cache_stats.get('valid_cache_entries', 0)
+            if total_cache_entries:
+                cache_hit_rate = min((valid_cache_entries / total_cache_entries) * 100, 100.0)
+            else:
+                cache_hit_rate = 0.0
+
             with cache_col1:
-                hit_rate = cache_stats.get('valid_cache_entries', 0) / max(cache_stats.get('query_cache_size', 1), 1)
-                st.metric("Cache Hit Rate", ".1%")
+                st.metric("Cache Hit Rate", f"{cache_hit_rate:.1f}%")
 
             with cache_col2:
                 st.metric("Query Cache Size", cache_stats.get('query_cache_size', 0))
