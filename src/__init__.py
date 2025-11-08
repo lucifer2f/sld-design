@@ -8,8 +8,8 @@ from models import Project, Load, Bus, Transformer, Cable, Breaker, LoadType, In
 from calculations import ElectricalCalculationEngine
 from standards import StandardsFactory
 from unified_processor import UnifiedDataProcessor, ProcessingInterface, create_unified_processor, initialize_processing_status, get_processing_status, ProcessingStatus
-from ai_design_analyzer import AIDesignAnalyzer, DesignAnalysis
-from ai_equipment_suggester import AIEquipmentSuggester
+from design_analyzer import AIDesignAnalyzer, DesignAnalysis
+from equipment_suggester import AIEquipmentSuggester
 
 __version__ = "1.0.0"
 __author__ = "EDA System Team"

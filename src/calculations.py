@@ -475,7 +475,11 @@ class ElectricalCalculationEngine:
     """Main calculation engine that integrates all modules"""
 
     def __init__(self, standard: str = "IEC"):
-        self.standard = StandardsFactory.get_standard(standard)
+        try:
+            self.standard = StandardsFactory.get_standard(standard)
+        except ValueError as e:
+            raise ValueError(f"Invalid electrical standard '{standard}': {e}")
+        
         self.current_calc = CurrentCalculator(self.standard)
         self.voltage_drop_calc = VoltageDropCalculator(self.standard)
         self.cable_sizing = CableSizingEngine(self.standard)
@@ -487,77 +491,100 @@ class ElectricalCalculationEngine:
 
     def calculate_load(self, load: Load) -> Load:
         """Calculate all electrical parameters for a load"""
-        # Calculate currents
-        current_results = self.current_calc.calculate_load_current(load)
-        load.current_a = current_results["current_a"]
-        load.design_current_a = current_results["design_current_a"]
-        load.apparent_power_kva = current_results["apparent_power_kva"]
+        if not isinstance(load, Load):
+            raise TypeError("Input must be a Load instance")
+        
+        try:
+            # Calculate currents
+            current_results = self.current_calc.calculate_load_current(load)
+            load.current_a = current_results["current_a"]
+            load.design_current_a = current_results["design_current_a"]
+            load.apparent_power_kva = current_results["apparent_power_kva"]
 
-        # Calculate cable sizing if length is provided
-        if load.cable_length > 0:
-            cable_results = self.cable_sizing.calculate_cable_size(
-                load.design_current_a,
-                load.voltage,
-                load.cable_length,
-                load.phases,
-                load.installation_method.value,
-                grouping_factor=load.grouping_factor,
-                power_factor=load.power_factor
-            )
+            # Calculate cable sizing if length is provided
+            if load.cable_length > 0:
+                cable_results = self.cable_sizing.calculate_cable_size(
+                    load.design_current_a,
+                    load.voltage,
+                    load.cable_length,
+                    load.phases,
+                    load.installation_method.value,
+                    grouping_factor=load.grouping_factor,
+                    power_factor=load.power_factor
+                )
 
-            load.cable_size_sqmm = cable_results["cable_size_sqmm"]
-            load.cable_cores = cable_results["cable_cores"]
-            load.cable_type = cable_results["cable_type"]
-            load.voltage_drop_v = cable_results["voltage_drop_v"]
-            load.voltage_drop_percent = cable_results["voltage_drop_percent"]
+                load.cable_size_sqmm = cable_results["cable_size_sqmm"]
+                load.cable_cores = cable_results["cable_cores"]
+                load.cable_type = cable_results["cable_type"]
+                load.voltage_drop_v = cable_results["voltage_drop_v"]
+                load.voltage_drop_percent = cable_results["voltage_drop_percent"]
 
-        # Calculate breaker selection
-        if load.design_current_a:
-            breaker_results = self.breaker_selection.select_breaker(
-                load.current_a,
-                load.design_current_a,
-                load.load_type.value,
-                load.voltage,
-                load.phases
-            )
+            # Calculate breaker selection
+            if load.design_current_a:
+                breaker_results = self.breaker_selection.select_breaker(
+                    load.current_a,
+                    load.design_current_a,
+                    load.load_type.value,
+                    load.voltage,
+                    load.phases
+                )
 
-            load.breaker_rating_a = breaker_results["breaker_rating_a"]
-            load.breaker_type = breaker_results["breaker_type"]
+                load.breaker_rating_a = breaker_results["breaker_rating_a"]
+                load.breaker_type = breaker_results["breaker_type"]
+
+        except (ValueError, KeyError, TypeError) as e:
+            raise ValueError(f"Error calculating load '{load.load_id}': {e}")
 
         return load
 
     def calculate_cable_voltage_drop(self, cable: Cable, current: float) -> Cable:
         """Calculate voltage drop for a cable"""
-        vdrop_v, vdrop_percent = self.voltage_drop_calc.calculate_voltage_drop(
-            current,
-            cable.size_sqmm,
-            cable.length_m,
-            3,  # Assume 3-phase for now
-            0.85  # Default power factor
-        )
+        if not isinstance(cable, Cable):
+            raise TypeError("Input must be a Cable instance")
+        if current <= 0:
+            raise ValueError("Current must be positive")
+        
+        try:
+            vdrop_v, vdrop_percent = self.voltage_drop_calc.calculate_voltage_drop(
+                current,
+                cable.size_sqmm,
+                cable.length_m,
+                3,  # Assume 3-phase for now
+                0.85  # Default power factor
+            )
 
-        cable.voltage_drop_v = vdrop_v
-        cable.voltage_drop_percent = vdrop_percent
+            cable.voltage_drop_v = vdrop_v
+            cable.voltage_drop_percent = vdrop_percent
+
+        except (ValueError, TypeError) as e:
+            raise ValueError(f"Error calculating voltage drop for cable '{cable.cable_id}': {e}")
 
         return cable
 
     def validate_calculations(self, load: Load) -> Dict[str, Union[bool, str]]:
         """Validate calculation results"""
+        if not isinstance(load, Load):
+            raise TypeError("Input must be a Load instance")
+        
         issues = []
 
-        # Check voltage drop
-        if load.voltage_drop_percent is not None:
-            vdrop_check = self.voltage_drop_calc.check_voltage_drop_limit(
-                load.voltage_drop_percent,
-                "power"  # Default to power circuit
-            )
-            if not vdrop_check["compliant"]:
-                issues.append(f"Voltage drop exceeds limit by {vdrop_check['exceeded_by']}%")
+        try:
+            # Check voltage drop
+            if load.voltage_drop_percent is not None:
+                vdrop_check = self.voltage_drop_calc.check_voltage_drop_limit(
+                    load.voltage_drop_percent,
+                    "power"  # Default to power circuit
+                )
+                if not vdrop_check["compliant"]:
+                    issues.append(f"Voltage drop exceeds limit by {vdrop_check['exceeded_by']}%")
 
-        # Check breaker rating
-        if load.breaker_rating_a is not None and load.design_current_a is not None:
-            if load.breaker_rating_a < load.design_current_a:
-                issues.append("Breaker rating too low for design current")
+            # Check breaker rating
+            if load.breaker_rating_a is not None and load.design_current_a is not None:
+                if load.breaker_rating_a < load.design_current_a:
+                    issues.append("Breaker rating too low for design current")
+
+        except (ValueError, KeyError, TypeError) as e:
+            issues.append(f"Validation error: {e}")
 
         return {
             "valid": len(issues) == 0,

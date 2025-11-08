@@ -70,6 +70,9 @@ class AIDesignAnalyzer:
         Returns:
             DesignAnalysis with findings and recommendations
         """
+        if not isinstance(project, Project):
+            raise TypeError("Input must be a Project instance")
+        
         analysis = DesignAnalysis(overall_score=75.0)
 
         try:
