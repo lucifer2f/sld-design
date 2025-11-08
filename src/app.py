@@ -901,7 +901,7 @@ class ElectricalDesignApp:
                         st.success("🤖 LLM: Active")
                     else:
                         st.warning("🤖 LLM: Pattern Mode")
-                except:
+                except Exception as e:
                     st.info("🤖 LLM: Unavailable")
             with col3:
                 # Check Vector DB availability
@@ -910,7 +910,7 @@ class ElectricalDesignApp:
                         st.success("🔍 Vector DB: Connected")
                     else:
                         st.info("🔍 Vector DB: Initializing")
-                except:
+                except (OSError, IOError) as e:
                     st.info("🔍 Vector DB: Disabled")
 
         st.markdown("Upload your Excel file and let AI extract electrical data automatically")

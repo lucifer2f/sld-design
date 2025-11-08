@@ -271,7 +271,7 @@ class VectorDatabaseManager:
                     component_data = {}
                     try:
                         component_data = json.loads(metadata.get("component_data_json", "{}"))
-                    except:
+                    except (json.JSONDecodeError, TypeError):
                         pass
 
                     recommendations.append({
@@ -335,7 +335,7 @@ class VectorDatabaseManager:
                     design_data = {}
                     try:
                         design_data = json.loads(metadata.get("design_data_json", "{}"))
-                    except:
+                    except (json.JSONDecodeError, TypeError):
                         pass
 
                     designs.append({
@@ -481,7 +481,7 @@ class VectorDatabaseManager:
                     component_data = {}
                     try:
                         component_data = json.loads(metadata.get("component_data", "{}"))
-                    except:
+                    except (json.JSONDecodeError, TypeError):
                         pass
 
                     components.append({
@@ -601,7 +601,7 @@ class VectorDatabaseManager:
                     pattern_data = {}
                     try:
                         pattern_data = json.loads(metadata.get("pattern_data_json", "{}"))
-                    except:
+                    except (json.JSONDecodeError, TypeError):
                         pass
 
                     patterns.append({
@@ -730,7 +730,7 @@ class VectorDatabaseManager:
                     rule_data = {}
                     try:
                         rule_data = json.loads(metadata.get("rule_data_json", "{}"))
-                    except:
+                    except (json.JSONDecodeError, TypeError):
                         pass
 
                     standards.append({
