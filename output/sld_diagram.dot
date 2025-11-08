@@ -1,0 +1,20 @@
+digraph SLD {
+  rankdir=LR;
+  node [fontname="Helvetica"];
+  edge [penwidth=1.0];
+
+  subgraph cluster_B001 {
+    style=dashed;
+    B001 [shape=circle, label="Main Distribution Bus\n400V"];
+  }
+
+   [shape=circle, label="Main\n1000.0kVA\n○/●"];
+
+   -> B001 [arrowhead=normal];
+  MCC-01 -> BR001;
+  L001 -> BR001;
+  DB-LP1 -> BR002;
+  L002 -> BR002;
+  MCC-02 -> BR003;
+  L003 -> BR003;
+}

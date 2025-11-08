@@ -1,0 +1,2996 @@
+{
+  "metadata": {
+    "name": "electrical_ai_training_data_v1_cleaned",
+    "description": "Cleaned version of Comprehensive training dataset for electrical engineering AI fine-tuning",
+    "created_at": "2025-11-07T16:12:17.618033",
+    "version": "1.0.0",
+    "statistics": {
+      "total_examples": 223,
+      "categories": 0,
+      "sources": 0,
+      "avg_confidence": 0.803139013452915,
+      "category_distribution": {
+        "cable_schedule": 12,
+        "load_schedule": 45,
+        "bus_schedule": 6,
+        "unknown": 10,
+        "vocabulary": 114,
+        "column_mapping": 36
+      }
+    }
+  },
+  "examples": [
+    {
+      "text": "cable id",
+      "label": "identifier",
+      "category": "cable_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Cable ID"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "7f935de7a91d1ca0343d9f8226b1affb"
+    },
+    {
+      "text": "from",
+      "label": "length",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "From"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "1e6623d97f65e4c47a5df42ae472fa92"
+    },
+    {
+      "text": "specification",
+      "label": "current",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Specification"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "e2a3183b669693d1bc5ed0d171690c48"
+    },
+    {
+      "text": "size (mm²)",
+      "label": "size",
+      "category": "cable_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Size (mm²)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "daf28cc5c4ff0128f81d4f257a1f700d"
+    },
+    {
+      "text": "length (m)",
+      "label": "length",
+      "category": "cable_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Length (m)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "611f50017b9322a74df4c5cba04d29da"
+    },
+    {
+      "text": "installation",
+      "label": "current",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Installation"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "dd591df6df457f50c9cbf84d7a4f00ee"
+    },
+    {
+      "text": "current rating (a)",
+      "label": "current",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Current Rating (A)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "d5b99812f9827174a7aadd9950dd892d"
+    },
+    {
+      "text": "voltage drop (v)",
+      "label": "identifier",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Voltage Drop (V)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "6e8994276ebd29fc99da8e72e027acde"
+    },
+    {
+      "text": "voltage drop (%)",
+      "label": "identifier",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx",
+        "original_case": "Voltage Drop (%)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_CableSchedule.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.757323",
+      "hash": "d6306b55462d919e0b1d9493db7a04ae"
+    },
+    {
+      "text": "load id",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Load ID"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "bf9f105eba7991c10d1782b16d6f459f"
+    },
+    {
+      "text": "load name",
+      "label": "name",
+      "category": "load_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Load Name"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "f286080ae8058759e5d4099b11e5db00"
+    },
+    {
+      "text": "type",
+      "label": "type",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Type"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "70c125f8d2dd75cd1f9cdb4db1aafe27"
+    },
+    {
+      "text": "power (kw)",
+      "label": "power",
+      "category": "load_schedule",
+      "confidence": 0.7,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Power (kW)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "5f7f926ebbc065620225c4b1b473b0a8"
+    },
+    {
+      "text": "voltage (v)",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Voltage (V)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "81ad51575ff3ac75001b457a5323b8ac"
+    },
+    {
+      "text": "phases",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Phases"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "5f012a36d87a8ac4f6d82fdeb9ce23dc"
+    },
+    {
+      "text": "power factor",
+      "label": "power",
+      "category": "load_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Power Factor"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "2e9c92eae48b039da6456012d27ae660"
+    },
+    {
+      "text": "current (a)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Current (A)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "9f49ca800940f2ccf734ca40ee04a214"
+    },
+    {
+      "text": "design current (a)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Design Current (A)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "ccd635ce8f553fc65eafeb3a96f8510e"
+    },
+    {
+      "text": "cable size (mm²)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Cable Size (mm²)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "f56e89f5fbb8d8922803af43e668e71e"
+    },
+    {
+      "text": "breaker rating (a)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Breaker Rating (A)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "cef3177d09d4076041b8ab59ff69b074"
+    },
+    {
+      "text": "voltage drop (%)",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load List",
+        "file_name": "Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx",
+        "original_case": "Voltage Drop (%)"
+      },
+      "source": "excel:Advanced_Manufacturing_Plant_-_Electrical_Distribution_LoadList.xlsx:Load List",
+      "timestamp": "2025-11-07T16:12:08.769233",
+      "hash": "c9b3f89d2125d2c179e32dab60528a2a"
+    },
+    {
+      "text": "cable id",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "Cable ID"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "f8a0a223d191b01699e0ea0d002b833d"
+    },
+    {
+      "text": "from equipment",
+      "label": "length",
+      "category": "load_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "From Equipment"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "1102c0386fcebd9f2df58ed5e3e6cd6f"
+    },
+    {
+      "text": "to equipment",
+      "label": "length",
+      "category": "load_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "To Equipment"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "caf023af245611f0e5a8d6bb7e84c9ec"
+    },
+    {
+      "text": "specification",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "Specification"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "cdccdbd7c214d8ed36c23b3cac674192"
+    },
+    {
+      "text": "size (mm²)",
+      "label": "size",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "Size (mm²)"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "953ac41118ea82f6f75453ae14fd6094"
+    },
+    {
+      "text": "length (m)",
+      "label": "length",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "Length (m)"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "6926d4b7eb0e3548451b3bc48b98e9ea"
+    },
+    {
+      "text": "installation",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_cable_schedule.xlsx",
+        "original_case": "Installation"
+      },
+      "source": "excel:sample_cable_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.798266",
+      "hash": "92afbe6c1759d9c5a8fe79d251a9e8f5"
+    },
+    {
+      "text": "load type",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Sheet1",
+        "file_name": "sample_load_schedule.xlsx",
+        "original_case": "Load Type"
+      },
+      "source": "excel:sample_load_schedule.xlsx:Sheet1",
+      "timestamp": "2025-11-07T16:12:08.806264",
+      "hash": "de0d257ee78f81baad39caf3dc37d380"
+    },
+    {
+      "text": "project name",
+      "label": "name",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Project Name"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "b0132b329d6eb6bd9c6ce4acd5a9f691"
+    },
+    {
+      "text": "project id",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Project ID"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "7f92e3c4f35f0f4f777435117ba621a8"
+    },
+    {
+      "text": "standard",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Standard"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "2ff7e0def437cde36b6dcc096dad5b68"
+    },
+    {
+      "text": "system voltage (v)",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "System Voltage (V)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "399c74ebfaf3d0fee5d6080fd5f2a9e3"
+    },
+    {
+      "text": "earthing type",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Earthing Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "43d9e3bc9a76565d857dc3773e38a506"
+    },
+    {
+      "text": "diversity factor",
+      "label": "voltage",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Diversity Factor"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "01e47504b68cdbc94f2ba08fc21dab12"
+    },
+    {
+      "text": "ambient temperature (°c)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Ambient Temperature (°C)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "e1bf4b9ede8e96c8523dfd651018e6ba"
+    },
+    {
+      "text": "altitude (m)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Project Info",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Altitude (m)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Project Info",
+      "timestamp": "2025-11-07T16:12:08.817813",
+      "hash": "084655f3df991db2180b50da222dbc08"
+    },
+    {
+      "text": "source type",
+      "label": "type",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Source Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "f505b69990cf8723d36f4bf74e73ca93"
+    },
+    {
+      "text": "rating (kva)",
+      "label": "voltage",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Rating (kVA)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "ae2013551a09ae18140c4f67f6005b94"
+    },
+    {
+      "text": "primary voltage (kv)",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Primary Voltage (kV)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "0380ed140bad70fad084395689e273f9"
+    },
+    {
+      "text": "secondary voltage (v)",
+      "label": "identifier",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Secondary Voltage (V)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "1ce8d5fb4d730dc2e3a6996a5104f9d8"
+    },
+    {
+      "text": "impedance (%)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Impedance (%)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "94cf37e6198b37f81d7c931e4986c829"
+    },
+    {
+      "text": "vector group",
+      "label": "voltage",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Vector Group"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "62aff94fbba4096ce621917e44b13b8c"
+    },
+    {
+      "text": "short circuit rating (ka)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Power Source",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Short Circuit Rating (kA)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Power Source",
+      "timestamp": "2025-11-07T16:12:08.819824",
+      "hash": "943f6e5ab9f254ca14c58c14223f6a4d"
+    },
+    {
+      "text": "quantity",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load Schedule",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Quantity"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Load Schedule",
+      "timestamp": "2025-11-07T16:12:08.821813",
+      "hash": "6fe0a2d818c47abe3003481aa731544b"
+    },
+    {
+      "text": "total power (kw)",
+      "label": "power",
+      "category": "load_schedule",
+      "confidence": 0.7,
+      "metadata": {
+        "sheet_name": "Load Schedule",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Total Power (kW)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Load Schedule",
+      "timestamp": "2025-11-07T16:12:08.821813",
+      "hash": "820cb3e99ed26d721d8d883272d8ae2d"
+    },
+    {
+      "text": "connected panel",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load Schedule",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Connected Panel"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Load Schedule",
+      "timestamp": "2025-11-07T16:12:08.821813",
+      "hash": "429afaa13515ca072f62f279e06066f3"
+    },
+    {
+      "text": "remarks",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load Schedule",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Remarks"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Load Schedule",
+      "timestamp": "2025-11-07T16:12:08.821813",
+      "hash": "57238a27d19e54ce71bdae72e7811e0a"
+    },
+    {
+      "text": "panel id",
+      "label": "identifier",
+      "category": "bus_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Distribution Hierarchy",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Panel ID"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Distribution Hierarchy",
+      "timestamp": "2025-11-07T16:12:08.824809",
+      "hash": "33ea20783527aeb5d062296483ea4fa4"
+    },
+    {
+      "text": "panel name",
+      "label": "name",
+      "category": "bus_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Distribution Hierarchy",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Panel Name"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Distribution Hierarchy",
+      "timestamp": "2025-11-07T16:12:08.824809",
+      "hash": "98e30f9045fec675b75108f29ead10ba"
+    },
+    {
+      "text": "panel type",
+      "label": "current",
+      "category": "bus_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Distribution Hierarchy",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Panel Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Distribution Hierarchy",
+      "timestamp": "2025-11-07T16:12:08.824809",
+      "hash": "4184d7da7d0112ddf69b2024de36bd45"
+    },
+    {
+      "text": "incoming source",
+      "label": "length",
+      "category": "bus_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Distribution Hierarchy",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Incoming Source"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Distribution Hierarchy",
+      "timestamp": "2025-11-07T16:12:08.824809",
+      "hash": "da3e19f80c3128d013b3d7f4ce984118"
+    },
+    {
+      "text": "voltage (v)",
+      "label": "identifier",
+      "category": "bus_schedule",
+      "confidence": 0.6,
+      "metadata": {
+        "sheet_name": "Distribution Hierarchy",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Voltage (V)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Distribution Hierarchy",
+      "timestamp": "2025-11-07T16:12:08.824809",
+      "hash": "0a207d18c6627822708831a482928c47"
+    },
+    {
+      "text": "remarks",
+      "label": "current",
+      "category": "bus_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Distribution Hierarchy",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Remarks"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Distribution Hierarchy",
+      "timestamp": "2025-11-07T16:12:08.824809",
+      "hash": "99b60bfeb4bd2b99a331babfc33a8315"
+    },
+    {
+      "text": "breaker type",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Protection Details",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Breaker Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Protection Details",
+      "timestamp": "2025-11-07T16:12:08.825809",
+      "hash": "1126fc2c9b4fa0dbfa6e941f6a34251b"
+    },
+    {
+      "text": "rating (a)",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Protection Details",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Rating (A)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Protection Details",
+      "timestamp": "2025-11-07T16:12:08.825809",
+      "hash": "c42dc1bbae99e02fef549a3c884f09e3"
+    },
+    {
+      "text": "relay type",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Protection Details",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Relay Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Protection Details",
+      "timestamp": "2025-11-07T16:12:08.825809",
+      "hash": "7ed7b0d9e158ef55c305b08a02b1cffe"
+    },
+    {
+      "text": "ct ratio",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Protection Details",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "CT Ratio"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Protection Details",
+      "timestamp": "2025-11-07T16:12:08.825809",
+      "hash": "5f06e5800a7a4bf322ae8501e6467a15"
+    },
+    {
+      "text": "coordination with",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Protection Details",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Coordination With"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Protection Details",
+      "timestamp": "2025-11-07T16:12:08.825809",
+      "hash": "97f14c664a0fccbccc649b4c0d8b77bd"
+    },
+    {
+      "text": "cable size",
+      "label": "current",
+      "category": "cable_schedule",
+      "confidence": 0.7,
+      "metadata": {
+        "sheet_name": "Cable Data",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Cable Size"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Cable Data",
+      "timestamp": "2025-11-07T16:12:08.827810",
+      "hash": "71795d2ef997757d6c419d18fb01e7e1"
+    },
+    {
+      "text": "material",
+      "label": "current",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Data",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Material"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Cable Data",
+      "timestamp": "2025-11-07T16:12:08.827810",
+      "hash": "2ae743faee9ac77fd527711f48c21a84"
+    },
+    {
+      "text": "derating factor",
+      "label": "current",
+      "category": "cable_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Data",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Derating Factor"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Cable Data",
+      "timestamp": "2025-11-07T16:12:08.827810",
+      "hash": "8ac274627ef6222a39296e47492ca929"
+    },
+    {
+      "text": "system",
+      "label": "length",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Grounding & Metering",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "System"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Grounding & Metering",
+      "timestamp": "2025-11-07T16:12:08.828813",
+      "hash": "3592bed086a6e2397ec36fe7fa2cd339"
+    },
+    {
+      "text": "grounding type",
+      "label": "type",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Grounding & Metering",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Grounding Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Grounding & Metering",
+      "timestamp": "2025-11-07T16:12:08.828813",
+      "hash": "78452fe997517e8581d7708e4702b475"
+    },
+    {
+      "text": "earth resistance (ω)",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Grounding & Metering",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Earth Resistance (Ω)"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Grounding & Metering",
+      "timestamp": "2025-11-07T16:12:08.828813",
+      "hash": "8ba1b17d3b419c816b357490ff1f6b9c"
+    },
+    {
+      "text": "meter type",
+      "label": "length",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Grounding & Metering",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "Meter Type"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Grounding & Metering",
+      "timestamp": "2025-11-07T16:12:08.829803",
+      "hash": "5b26095033124698ce4cb1539ece27c0"
+    },
+    {
+      "text": "ct/pt ratings",
+      "label": "current",
+      "category": "unknown",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Grounding & Metering",
+        "file_name": "temp_SLD_Data_Template.xlsx",
+        "original_case": "CT/PT Ratings"
+      },
+      "source": "excel:temp_SLD_Data_Template.xlsx:Grounding & Metering",
+      "timestamp": "2025-11-07T16:12:08.829803",
+      "hash": "b2c07a5686f5ba449afd0a2cf23d9951"
+    },
+    {
+      "text": "size mm²",
+      "label": "size",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "test_surgical_fixes.xlsx",
+        "original_case": "Size mm²"
+      },
+      "source": "excel:test_surgical_fixes.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.836810",
+      "hash": "ab0edcfc130f1d1ed8d46c5d45f99a22"
+    },
+    {
+      "text": "install method",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "test_surgical_fixes.xlsx",
+        "original_case": "Install Method"
+      },
+      "source": "excel:test_surgical_fixes.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.836810",
+      "hash": "5bae6d62a0f44fdac78456d22511fb4e"
+    },
+    {
+      "text": "cable type",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "test_surgical_fixes.xlsx",
+        "original_case": "cable type"
+      },
+      "source": "excel:test_surgical_fixes.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.836810",
+      "hash": "924f4528735b49bbc62328ae46be71a6"
+    },
+    {
+      "text": "armored?",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Cable Schedule",
+        "file_name": "test_surgical_fixes.xlsx",
+        "original_case": "armored?"
+      },
+      "source": "excel:test_surgical_fixes.xlsx:Cable Schedule",
+      "timestamp": "2025-11-07T16:12:08.836810",
+      "hash": "01353d58bdb9d5cb577edee77348aded"
+    },
+    {
+      "text": "cable length (m)",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load Schedule",
+        "file_name": "test_surgical_fixes.xlsx",
+        "original_case": "Cable Length (m)"
+      },
+      "source": "excel:test_surgical_fixes.xlsx:Load Schedule",
+      "timestamp": "2025-11-07T16:12:08.838811",
+      "hash": "453f558086789b8605296bd9d41bbf0e"
+    },
+    {
+      "text": "installation method",
+      "label": "current",
+      "category": "load_schedule",
+      "confidence": 0.5,
+      "metadata": {
+        "sheet_name": "Load Schedule",
+        "file_name": "test_surgical_fixes.xlsx",
+        "original_case": "Installation Method"
+      },
+      "source": "excel:test_surgical_fixes.xlsx:Load Schedule",
+      "timestamp": "2025-11-07T16:12:08.838811",
+      "hash": "cd7300769a7b1e0f2850ee7cfb95ba96"
+    },
+    {
+      "text": "motor",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "motor",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "d30d86981f99c5b705c02b64e9eb21e9"
+    },
+    {
+      "text": "motors",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "motor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "25da32c9aeddac45895bdbfc3c847d05"
+    },
+    {
+      "text": "pumps",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "pump",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "e1c858e6e272b605f0df5c339b442653"
+    },
+    {
+      "text": "pump",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "pump",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "b71055e044206e5ef06865021029d0f5"
+    },
+    {
+      "text": "fan",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "fan",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "4b607ff1ce527cca06504eb2ec1f0a0b"
+    },
+    {
+      "text": "fans",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "fan",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "d7641074d7fc8efc2ec71b6431e9373b"
+    },
+    {
+      "text": "compressors",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "compressor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "267228cfbb8a59af483785c5dc11b446"
+    },
+    {
+      "text": "compressor",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "compressor",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "7100108e25e0288dcea9a4323f2b4015"
+    },
+    {
+      "text": "conveyor",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "conveyor",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "9663066085bfb2eecd4eebf4e7093f7d"
+    },
+    {
+      "text": "conveyors",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "conveyor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "20ac01c64505b9a110e54d6fb17e9199"
+    },
+    {
+      "text": "lighting",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "lighting",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "62c5f4ec09c7fdac559ec2dbeef85736"
+    },
+    {
+      "text": "lightings",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "lighting",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "2c70bc5ce4797e6c5e6a0949b6453390"
+    },
+    {
+      "text": "hvacs",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "hvac",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "99fdd1b528b95d65013d139395e45e72"
+    },
+    {
+      "text": "hvac",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "hvac",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "2916dcef2afbb0df9d7bc7c0a5751bfd"
+    },
+    {
+      "text": "heatings",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "heating",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "a2f94611e4dceede5840cd0642dbcfb9"
+    },
+    {
+      "text": "heating",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "heating",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "1b16f99b06053d451952d12506b5d443"
+    },
+    {
+      "text": "coolings",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "cooling",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "10dafd816c5a42a83ff59f7ec2e77b34"
+    },
+    {
+      "text": "cooling",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "cooling",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "94e32a0c85063c7d84b1c14617a23991"
+    },
+    {
+      "text": "ventilations",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ventilation",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "fb32e2e7991a87905f7b8fd5c460d4c6"
+    },
+    {
+      "text": "ventilation",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ventilation",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "20d01d2fc479a7fa3ac0bee38f3862cb"
+    },
+    {
+      "text": "ups",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ups",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "f07759093720f0a5676192136520e880"
+    },
+    {
+      "text": "generators",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "generator",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "b1a3ec9cde218ef4d4cc340b02bb86f8"
+    },
+    {
+      "text": "generator",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "generator",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "256aaa7724348f784f655ba3b2729c9d"
+    },
+    {
+      "text": "transformer",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "transformer",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "874e61e9383f8c4bd0459f1067bf008f"
+    },
+    {
+      "text": "transformers",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "transformer",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "70f0ee21b20cf848e5d9efd5c7313e97"
+    },
+    {
+      "text": "switchgears",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "switchgear",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "e3ebbc0b8a1ffa18e596a50dee011483"
+    },
+    {
+      "text": "switchgear",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "switchgear",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "6a44fb8c28ec9cba3dbbec88231c9b3b"
+    },
+    {
+      "text": "panels",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "panel",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "6a818483ccb3e18420f55a4967feb42b"
+    },
+    {
+      "text": "panel",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "panel",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "5516bd957190856218cc569ba75b0c84"
+    },
+    {
+      "text": "breakers",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "breaker",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "5be7bbed62dd19a8fe60caff082bbbce"
+    },
+    {
+      "text": "breaker",
+      "label": "load_types",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "breaker",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "29e10dc04e4ff0c901f962ed0d3ced77"
+    },
+    {
+      "text": "v",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "voltage",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "859a58fcbda4f66fc06df79d72c3d6dd"
+    },
+    {
+      "text": "un",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "voltage",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "5f3f0b5c366651d0bdf9bca336503b24"
+    },
+    {
+      "text": "voltages",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "voltage",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "3f05922d95f0979655182204691d4bbf"
+    },
+    {
+      "text": "voltage",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "voltage",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "70bd9897bbe4363ad822a9ce4f43b50a"
+    },
+    {
+      "text": "volts",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "voltage",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "fc360848066016f2b027be92b4a20d3a"
+    },
+    {
+      "text": "current",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "current",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "4662455b1c622a028ca766535cdbbf0b"
+    },
+    {
+      "text": "i",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "current",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "492cb1c98ddf9702e746e7be09d0627a"
+    },
+    {
+      "text": "amps",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "current",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "753b5816c871034e65f9b26ec46fdc72"
+    },
+    {
+      "text": "a",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "current",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "ae721a2d163bee31e33fb3d0391f5f3c"
+    },
+    {
+      "text": "currents",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "current",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "91111d0427ce8ad93aef7e2439fbf3d4"
+    },
+    {
+      "text": "p",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "d31aa82a64d083ac21714792cfa5034c"
+    },
+    {
+      "text": "watt",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "6cf2dc92eef98237039d3e0b22371b97"
+    },
+    {
+      "text": "powers",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "1866f987c00af2bd2f2502d261b7f37f"
+    },
+    {
+      "text": "kw",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "e0aaf29bd72391d5f3d583b68ad6d69a"
+    },
+    {
+      "text": "power",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "09c4e805fb11e75b3688fd3f5f07d5e6"
+    },
+    {
+      "text": "power_factor",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power factor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "3a909f617e7e3c6aed2335c3c188a127"
+    },
+    {
+      "text": "power factor",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power factor",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "69a04ca475a67dc555d52cdb1797f0fd"
+    },
+    {
+      "text": "power factors",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "power factor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "e01f659c8565cc733ab5e629af051bb6"
+    },
+    {
+      "text": "efficiency",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "efficiency",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "7a71279ac22eb25a87ca0e7f87f8978e"
+    },
+    {
+      "text": "efficiencys",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "efficiency",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "d056047df463ac2dd7d3ded63933420d"
+    },
+    {
+      "text": "frequency",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "frequency",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "a323ecd9ada18499a79f348a6e55c6ff"
+    },
+    {
+      "text": "frequencys",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "frequency",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "f9501d6e51277a2350ced21022501ac1"
+    },
+    {
+      "text": "phases",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "phases",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "6dee263539bc269c531a738baae0528d"
+    },
+    {
+      "text": "resistances",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "resistance",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "2d8e6f369a78548634fa85bd0644250f"
+    },
+    {
+      "text": "resistance",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "resistance",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "be3ed72a9720c956fb6ef995ce950a88"
+    },
+    {
+      "text": "impedances",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "impedance",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "afdf89af010dd9de84c7c5e1f459465a"
+    },
+    {
+      "text": "impedance",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "impedance",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "5dab5968095ede65a8daf4d668702e1b"
+    },
+    {
+      "text": "capacitance",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "capacitance",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "d468aaf545162c632c13e867c5e36134"
+    },
+    {
+      "text": "capacitances",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "capacitance",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "8d0c8952351a7052cc284f671da0a4ac"
+    },
+    {
+      "text": "inductances",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "inductance",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "27ba8ba1e0287367d82494ef718480f6"
+    },
+    {
+      "text": "inductance",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "inductance",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "93373746bcd50e6441bc015a9f0c91fe"
+    },
+    {
+      "text": "grounding",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "grounding",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "e12657d80716b12f348a5efdddeb3457"
+    },
+    {
+      "text": "groundings",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "grounding",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "51e92e574831b83d65d4ddc98de9009f"
+    },
+    {
+      "text": "earthing",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "earthing",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "b0e7c52349a3e69b053dd7a229850ab5"
+    },
+    {
+      "text": "earthings",
+      "label": "electrical_parameters",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "earthing",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "53e804aacfe86dcb6d60ae336002b0f2"
+    },
+    {
+      "text": "iecs",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "iec",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "cdd45912020cf668b62b26a8eff0432b"
+    },
+    {
+      "text": "iec",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "iec",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "0db1756e5ec0119cee38242fbb24a429"
+    },
+    {
+      "text": "nec",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "nec",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "1f306dd3d05787d06ab03ce1df589557"
+    },
+    {
+      "text": "necs",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "nec",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "8a0267bbf7a578448916af2bf02475bd"
+    },
+    {
+      "text": "is",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "is",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "958dc7f59d991fd427dbdbbc8caa67f4"
+    },
+    {
+      "text": "bs",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "bs",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "328d43fc66c14002738d46f425bae71e"
+    },
+    {
+      "text": "dins",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "din",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "89973dada20f078695567a0c823ff80f"
+    },
+    {
+      "text": "din",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "din",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "a17ea68d6efa9fc6c6375cd07a66455d"
+    },
+    {
+      "text": "nema",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "nema",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "aca37509c0256a147ab98bff2299ded8"
+    },
+    {
+      "text": "nemas",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "nema",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "9b0b014f7866b9861a7d35702a67cf72"
+    },
+    {
+      "text": "ieees",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ieee",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "587c7103380a9da47d55153dafcc0912"
+    },
+    {
+      "text": "ieee",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ieee",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "7a64353f51ea7d109a9020ffecfb50a4"
+    },
+    {
+      "text": "ansi",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ansi",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "806931cccab7c386e32ba6c19f81c028"
+    },
+    {
+      "text": "ansis",
+      "label": "standards",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "ansi",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "3a6309f070b2de13f38be0c076dd41d3"
+    },
+    {
+      "text": "conductor",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "conductor",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "32e14764b5c4d408c13f3305b4450b6e"
+    },
+    {
+      "text": "conductors",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "conductor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "a5e8738c4c1ec729ad7f08dc249d40ce"
+    },
+    {
+      "text": "insulation",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "insulation",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "a6646564efdc0e9d6c55236114f8a58e"
+    },
+    {
+      "text": "insulations",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "insulation",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "b4a499fa7dec4d023b6bf031c5a1a48e"
+    },
+    {
+      "text": "jacket",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "jacket",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "de3c7e5c61bb03c6c7a702f3440c6897"
+    },
+    {
+      "text": "jackets",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "jacket",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "67bf2a67501327987e9ee3ff68736e66"
+    },
+    {
+      "text": "armors",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "armor",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "8e5c02e153897a4d2bb2a52c60a3fbdf"
+    },
+    {
+      "text": "armor",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "armor",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "29372f87814c3b1198ce7d52376f20b5"
+    },
+    {
+      "text": "shieldings",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "shielding",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "3fdee37459fe539d34e232eba09c8ab0"
+    },
+    {
+      "text": "shielding",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "shielding",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "854de5e1370302f970baa1dc08019def"
+    },
+    {
+      "text": "cross sections",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "cross section",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "12c1af94c87a02302af653353a7c41e3"
+    },
+    {
+      "text": "cross_section",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "cross section",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "10affcb2a7708dd0570ca390b641129f"
+    },
+    {
+      "text": "cross section",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "cross section",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "d3cb26dc0186de4be7836058cf4699c5"
+    },
+    {
+      "text": "diameters",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "diameter",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "20fce6050aa1d74223c58cd40418f492"
+    },
+    {
+      "text": "diameter",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "diameter",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "c1ff115a471a3afc73a93a2137b94e0f"
+    },
+    {
+      "text": "lengths",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "length",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "59483509f5313c7638d0646a46a95c24"
+    },
+    {
+      "text": "length",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "length",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "8f5c7e00d863e5ec1e5395aa2368acbc"
+    },
+    {
+      "text": "installation methods",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "installation method",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "eb0d508182bbf4e9a92357d171004dea"
+    },
+    {
+      "text": "installation_method",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "installation method",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "5f56bdc901e2785bc24ff191eab49c27"
+    },
+    {
+      "text": "installation method",
+      "label": "cable_properties",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "installation method",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "aee4216379613887db6a3dc22818b4ca"
+    },
+    {
+      "text": "kw",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "kw",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "99b2b7e057c69930ce601d9abcf2b148"
+    },
+    {
+      "text": "kws",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "kw",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "f8c7c9320bd9d612d311e0df0c21b27b"
+    },
+    {
+      "text": "kvas",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "kva",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "7f5aeb82da81e8f06231ac5d405b017f"
+    },
+    {
+      "text": "kva",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "kva",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "b1894d78fa80a18ba301f95eb9ce27ea"
+    },
+    {
+      "text": "hp",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "hp",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "7dcd59bca4eee0a61bccbcc9d4bc56ef"
+    },
+    {
+      "text": "hps",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "hp",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "1723e64683608897fea8fb444680ae6e"
+    },
+    {
+      "text": "amps",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "amps",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "dfb510faa4864860f7a0003382ce7f92"
+    },
+    {
+      "text": "volts",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "volts",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "aaa05819a7acfef4028d7ffd0d13641c"
+    },
+    {
+      "text": "hzs",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "hz",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "a58b0690f16e871f248df39e880fa139"
+    },
+    {
+      "text": "hz",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "hz",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "f2a346f6c94818e9d5c1b2bd17fd7051"
+    },
+    {
+      "text": "rpms",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "rpm",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "27bbd058bdebae32d1f4e98491af1426"
+    },
+    {
+      "text": "rpm",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "rpm",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "0f9eb2ff5bf0d962976421dd59ef0cc6"
+    },
+    {
+      "text": "temperature",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "temperature",
+        "variation_type": "original"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "befc4c80f1ddd658e2033b15200c2cb6"
+    },
+    {
+      "text": "temperatures",
+      "label": "equipment_ratings",
+      "category": "vocabulary",
+      "confidence": 0.95,
+      "metadata": {
+        "base_term": "temperature",
+        "variation_type": "generated"
+      },
+      "source": "domain_kb",
+      "timestamp": "2025-11-07T16:12:08.839813",
+      "hash": "01edd4bf5d6ba760001959ceee9c849a"
+    },
+    {
+      "text": "size mm2",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "cb35384fb47053cc75c7d5919be89a85"
+    },
+    {
+      "text": "size (mm2)",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "176aabedecbc234266a97957b53b5f19"
+    },
+    {
+      "text": "size_mm2",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "7bd128db89319803cca7abd05ec65f85"
+    },
+    {
+      "text": "sizemm2",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "84af00d27232fd9ec93507fab82e4eb0"
+    },
+    {
+      "text": "size mm²",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "451f5630b7dd756674ac31f71be175f1"
+    },
+    {
+      "text": "csa (mm2)",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "2397e4c4f30f956c461b7987b84454d6"
+    },
+    {
+      "text": "cross sectional area (mm2)",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "75e75b89b386f8b731747fce7e8d10f4"
+    },
+    {
+      "text": "cross-sectional area (mm2)",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "ba9052580721b93114d989686005fcfe"
+    },
+    {
+      "text": "section (mm2)",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "3b7ccde89071a14fa140429be971d287"
+    },
+    {
+      "text": "conductor size (mm2)",
+      "label": "size_mm2",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "size_mm2",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "70332346b0c45cdfcdac9eb8b30f0491"
+    },
+    {
+      "text": "install method",
+      "label": "install_method",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "install_method",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "e5bfc19b4ae34e1e009373b45085382f"
+    },
+    {
+      "text": "installation method",
+      "label": "install_method",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "install_method",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "6ffa93772fd046360df221a13db65866"
+    },
+    {
+      "text": "method of installation",
+      "label": "install_method",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "install_method",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "2637acbe892694e2740c460e07479d57"
+    },
+    {
+      "text": "install_method",
+      "label": "install_method",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "install_method",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "639975efc7ed9ddb95656e3295d8b7d7"
+    },
+    {
+      "text": "cable type",
+      "label": "cable_type",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_type",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "e857d53cf681c22866c822a33f1ff77b"
+    },
+    {
+      "text": "type",
+      "label": "cable_type",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_type",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "d6d0d9c8dc2e580215b57ada8428082d"
+    },
+    {
+      "text": "insulation type",
+      "label": "cable_type",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_type",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "fd9dee6f089c9e59bb16fbb0ea38ff94"
+    },
+    {
+      "text": "cable insulation",
+      "label": "cable_type",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_type",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "055d8af8c985d3ad6ce244578d3f8167"
+    },
+    {
+      "text": "jacket type",
+      "label": "cable_type",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_type",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "239799ba2e86340cdb64633cde072fef"
+    },
+    {
+      "text": "armored",
+      "label": "armored",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "armored",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "03f2fac7b1c85af3ea231972602113ab"
+    },
+    {
+      "text": "armoured",
+      "label": "armored",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "armored",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "698e8e83076477f4c73c4c0a4769f1d3"
+    },
+    {
+      "text": "armored?",
+      "label": "armored",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "armored",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "0bee69500646b844234f971e4217d1b0"
+    },
+    {
+      "text": "is armored",
+      "label": "armored",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "armored",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "e91f5948f263db9149b7c87b3c98b3ab"
+    },
+    {
+      "text": "armour",
+      "label": "armored",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "armored",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "d76643c308d813e7d53b8774ab33efd4"
+    },
+    {
+      "text": "cable length (m)",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "4e13201f717ec6fdce96e52e4e9956f3"
+    },
+    {
+      "text": "length (m)",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "b2357d74aa126fba510704424a762d43"
+    },
+    {
+      "text": "len(m)",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "4d1cdb17212cd3da6eac2933094307a2"
+    },
+    {
+      "text": "#length(m)",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "5c07b7271e641e8a441d9836245c6a1a"
+    },
+    {
+      "text": "longitud de cable (m)",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "f2850126f2c070a737ce0543f79a84a1"
+    },
+    {
+      "text": "longitud_cable_m",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "488ac9c2352067fb463964408b63062c"
+    },
+    {
+      "text": "longueur câble (m)",
+      "label": "cable_length_m",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "cable_length_m",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "8556e870b88e8d2a7d2d8e6b087b17d6"
+    },
+    {
+      "text": "efficiency",
+      "label": "efficiency",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "efficiency",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "81932c544de7913bd0ed06ef755a1758"
+    },
+    {
+      "text": "η",
+      "label": "efficiency",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "efficiency",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "eef7d85d08321b43f08a4ebf6c4ee7b3"
+    },
+    {
+      "text": "eta (%)",
+      "label": "efficiency",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "efficiency",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "e2d1cb4926a268df3dab99c0217d27a7"
+    },
+    {
+      "text": "efficacité",
+      "label": "efficiency",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "efficiency",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "a93b49bbf30c815a3cbc1a1e030e275a"
+    },
+    {
+      "text": "efficiency %",
+      "label": "efficiency",
+      "category": "column_mapping",
+      "confidence": 0.9,
+      "metadata": {
+        "canonical_field": "efficiency",
+        "is_canonical": false
+      },
+      "source": "column_canon",
+      "timestamp": "2025-11-07T16:12:17.616030",
+      "hash": "5d2c6ce5fce9451e29981d13cb407db7"
+    }
+  ]
+}

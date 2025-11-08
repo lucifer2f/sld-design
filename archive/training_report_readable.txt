@@ -1,0 +1,29 @@
+
+ELECTRICAL ENGINEERING AI MODEL FINE-TUNING REPORT
+============================================================
+
+Training Summary:
+- Base Model: all-MiniLM-L6-v2
+- Fine-tuned Model: models\electrical_finetuned_20251107_164343
+- Training Date: 2025-11-07T16:53:04
+- Dataset Size: 207 examples
+- Training Pairs: 5394
+
+Training Configuration:
+- Epochs: 3
+- Batch Size: 16
+- Warmup Steps: 50
+- Learning Rate: 2e-5
+
+Final Performance Metrics:
+- electrical-test_pearson_cosine: 0.4975
+- electrical-test_spearman_cosine: 0.1456
+
+Training History:
+- Epoch 2.0710059171597632, Step 700: 0.1426
+- Epoch 2.366863905325444, Step 800: 0.1456
+- Epoch 2.662721893491124, Step 900: 0.1454
+- Epoch 2.9585798816568047, Step 1000: 0.1456
+- Epoch 3.0, Step 1014: 0.1456
+
+============================================================

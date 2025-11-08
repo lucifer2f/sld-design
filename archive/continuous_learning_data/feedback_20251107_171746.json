@@ -1,0 +1,14 @@
+{
+  "type": "user_feedback",
+  "original_mapping": {
+    "column1": "field1"
+  },
+  "corrected_mapping": {
+    "column1": "corrected_field1"
+  },
+  "context": {
+    "context": "test"
+  },
+  "timestamp": "2025-11-07T17:17:46.992568",
+  "confidence": 1.0
+}

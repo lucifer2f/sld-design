@@ -1,0 +1,101 @@
+{
+  "training_summary": {
+    "timestamp": "2025-11-07T16:53:04.569867",
+    "base_model": "all-MiniLM-L6-v2",
+    "finetuned_model_path": "models\\electrical_finetuned_20251107_164343",
+    "dataset_size": 207,
+    "training_pairs": 5394,
+    "validation_pairs": 1156,
+    "test_pairs": 1157
+  },
+  "training_config": {
+    "base_model": "all-MiniLM-L6-v2",
+    "epochs": 3,
+    "batch_size": 16,
+    "warmup_steps": 50
+  },
+  "final_metrics": {
+    "electrical-test_pearson_cosine": 0.49753803783161177,
+    "electrical-test_spearman_cosine": 0.14561850331155096
+  },
+  "training_history": [
+    {
+      "epoch": 0.2958579881656805,
+      "steps": 100,
+      "score": 0.037624566149588236,
+      "timestamp": "2025-11-07T16:44:38.985552"
+    },
+    {
+      "epoch": 0.591715976331361,
+      "steps": 200,
+      "score": 0.0791947333421298,
+      "timestamp": "2025-11-07T16:45:31.659541"
+    },
+    {
+      "epoch": 0.8875739644970414,
+      "steps": 300,
+      "score": 0.10694915083414594,
+      "timestamp": "2025-11-07T16:46:24.172746"
+    },
+    {
+      "epoch": 1.0,
+      "steps": 338,
+      "score": 0.12005198875629805,
+      "timestamp": "2025-11-07T16:46:46.785064"
+    },
+    {
+      "epoch": 1.183431952662722,
+      "steps": 400,
+      "score": 0.13588356053044692,
+      "timestamp": "2025-11-07T16:47:21.232058"
+    },
+    {
+      "epoch": 1.4792899408284024,
+      "steps": 500,
+      "score": 0.13460523538204772,
+      "timestamp": "2025-11-07T16:48:16.313231"
+    },
+    {
+      "epoch": 1.7751479289940828,
+      "steps": 600,
+      "score": 0.1425456033786558,
+      "timestamp": "2025-11-07T16:49:08.858264"
+    },
+    {
+      "epoch": 2.0,
+      "steps": 676,
+      "score": 0.14215227295654623,
+      "timestamp": "2025-11-07T16:49:50.171330"
+    },
+    {
+      "epoch": 2.0710059171597632,
+      "steps": 700,
+      "score": 0.14259477030427087,
+      "timestamp": "2025-11-07T16:50:06.718659"
+    },
+    {
+      "epoch": 2.366863905325444,
+      "steps": 800,
+      "score": 0.14561850331155096,
+      "timestamp": "2025-11-07T16:50:59.216593"
+    },
+    {
+      "epoch": 2.662721893491124,
+      "steps": 900,
+      "score": 0.14544642016095263,
+      "timestamp": "2025-11-07T16:51:51.723467"
+    },
+    {
+      "epoch": 2.9585798816568047,
+      "steps": 1000,
+      "score": 0.1455693363738098,
+      "timestamp": "2025-11-07T16:52:47.650478"
+    },
+    {
+      "epoch": 3.0,
+      "steps": 1014,
+      "score": 0.1455693366565047,
+      "timestamp": "2025-11-07T16:52:59.668415"
+    }
+  ]
+}

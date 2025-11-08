@@ -1,0 +1,361 @@
+================================================================================
+                    AI FEATURES VISIBILITY ENHANCEMENT
+                         Feature Guide & Navigation
+================================================================================
+
+QUICK ACCESS GUIDE
+================================================================================
+
+To Access AI Features:
+  1. Click "🤖 AI Tools" in the left navigation sidebar
+  2. You will see 4 tabs:
+
+     ┌─────────────────────────────────────────────────────────────┐
+     │ 📥 Excel   │ ⚙️ Equipment  │ 💡 Design    │ 📊 Analytics   │
+     │   Import   │ Suggestions   │  Insights    │                │
+     └─────────────────────────────────────────────────────────────┘
+
+================================================================================
+FEATURE OVERVIEW
+================================================================================
+
+TAB 1: 📥 EXCEL IMPORT
+─────────────────────────────────────────────────────────────────────────────
+Purpose: Import electrical design data from Excel spreadsheets
+Features:
+  • Upload .xlsx or .xls files
+  • Automatic AI data extraction
+  • Create projects from spreadsheets
+  • Sample templates available
+  • LLM and Vector DB status indicators
+
+Status Badges:
+  🤖 LLM: Active/Pattern Mode/Unavailable
+  🔍 Vector DB: Connected/Initializing/Disabled
+
+How to Use:
+  1. Click "Choose Excel file"
+  2. Select your spreadsheet
+  3. Enter project name
+  4. Click "🚀 Extract with AI"
+  5. View extracted loads, buses, transformers, cables
+
+
+TAB 2: ⚙️ EQUIPMENT SUGGESTIONS  [NEW - PROMINENT]
+─────────────────────────────────────────────────────────────────────────────
+Purpose: AI equipment sizing and selection recommendations
+Features:
+  • Cable size recommendations (mm²)
+  • Breaker rating and type recommendations
+  • Starter equipment suggestions
+  • Reasoning for each recommendation
+  • Automatic calculations
+
+What You'll See:
+  
+  For each load:
+  ┌─────────────────────────────────────────────────────────┐
+  │ 📌 L1: Main Pump Motor                        [EXPAND]  │
+  ├─────────────────────────────────────────────────────────┤
+  │ 🔌 Cable Recommendation                                 │
+  │   Size: 35 mm²                                          │
+  │   Type: Multi-Core                                      │
+  │   Material: Copper                                      │
+  │   Reason: Ampacity 127A exceeds required 87.5A          │
+  │                                                         │
+  │ ⚡ Breaker Recommendation                               │
+  │   Rating: 100 A                                         │
+  │   Type: MCCB                                            │
+  │   Curve: D                                              │
+  │   Reason: Protects load current with appropriate margin │
+  │                                                         │
+  │ 🔧 Starter Recommendation                               │
+  │   Type: Soft Starter or VFD                             │
+  │   Reason: Motor load 11.0kW requires starting equipment │
+  └─────────────────────────────────────────────────────────┘
+
+How to Use:
+  1. Load/create project with loads
+  2. Click "⚙️ Equipment Suggestions" tab
+  3. System auto-calculates if needed
+  4. Expand each load to see recommendations
+  5. Review and apply recommendations to your design
+
+Tips:
+  ✓ First load is expanded by default
+  ✓ All recommendations show detailed reasoning
+  ✓ Automatic calculations run on demand
+  ✓ No manual calculation step needed
+
+
+TAB 3: 💡 DESIGN INSIGHTS  [NEW - PROMINENT]
+─────────────────────────────────────────────────────────────────────────────
+Purpose: Comprehensive AI design analysis and validation
+Features:
+  • Design quality score (0-100)
+  • Issue and safety concern detection
+  • AI recommendations for improvements
+  • Standards compliance checking
+  • Automatic analysis
+
+What You'll See:
+
+Design Score Dashboard:
+  ┌──────────────────────────────────────────────────────┐
+  │  Design Score: 82/100 🟢                             │
+  │  Issues: 0    Recommendations: 2    Safety: 0        │
+  └──────────────────────────────────────────────────────┘
+
+Score Interpretation:
+  🟢 80-100  = Excellent design, well optimized
+  🟡 60-79   = Good design, some improvements needed
+  🔴 0-59    = Poor design, significant issues
+
+Detailed Findings:
+
+Issues Found ❌
+  • Cable undersized for load current
+  • Breaker protection inadequate
+
+Safety Concerns ⚠️
+  • Voltage drop exceeds limits
+  • Phase imbalance detected
+
+Recommendations ✅
+  • Consider load balancing across phases
+  • Verify cable routes for protection
+
+Warnings ℹ️
+  • Cable utilization is low
+  • Consider smaller cable size
+
+Standards Compliance
+  ┌──────────────────────┬──────────┐
+  │ Aspect               │ Compliant│
+  ├──────────────────────┼──────────┤
+  │ Cable Sizing         │    ✅    │
+  │ Breaker Protection   │    ✅    │
+  │ Voltage Drop         │    ✅    │
+  │ Phase Balance        │    ❌    │
+  └──────────────────────┴──────────┘
+
+How to Use:
+  1. Click "💡 Design Insights" tab
+  2. Review design score and metrics
+  3. Address red ❌ items (safety/critical)
+  4. Review yellow ⚠️ items (warnings)
+  5. Follow green ✅ recommendations
+  6. Ensure standards compliance ✅
+
+
+TAB 4: 📊 ANALYTICS
+─────────────────────────────────────────────────────────────────────────────
+Purpose: Visualize electrical system with charts and graphs
+Features:
+  • Load power distribution chart
+  • Voltage distribution pie chart
+  • System metrics and statistics
+
+What You'll See:
+
+Power Distribution                  Voltage Distribution
+    
+    ┌─ 20 kW ──┐                   380V   50%  ┌──┐
+    │ L1: 11   │                  ┌─────────┐ │  │
+    │ L2:  5   │                  │         │ │60│
+    │ L3:  4   │                  │ 230V    │ │  │
+    │ L4:  0   │                  │   50%   │ └──┘
+    └──────────┘                  │         │
+                                  └─────────┘
+
+How to Use:
+  1. Click "📊 Analytics" tab
+  2. View power distribution across loads
+  3. Check voltage level breakdown
+  4. Identify system imbalances
+  5. Use for optimization decisions
+
+================================================================================
+WORKFLOW EXAMPLES
+================================================================================
+
+EXAMPLE 1: Import Data & Get Recommendations
+──────────────────────────────────────────────
+
+Step 1: Import Excel Data
+  └─ Go to 📥 Excel Import tab
+  └─ Upload your electrical spreadsheet
+  └─ Click Extract with AI
+  └─ System creates project automatically
+
+Step 2: View Equipment Suggestions
+  └─ Go to ⚙️ Equipment Suggestions tab
+  └─ Expand each load
+  └─ Review cable, breaker, starter recommendations
+  └─ Apply recommendations to your design
+
+Step 3: Analyze Design Quality
+  └─ Go to 💡 Design Insights tab
+  └─ Review design score (🟢/🟡/🔴)
+  └─ Check for issues and safety concerns
+  └─ Follow recommendations to improve
+
+Step 4: Visualize System
+  └─ Go to 📊 Analytics tab
+  └─ View power and voltage distributions
+  └─ Identify and fix imbalances
+
+Step 5: Export Results
+  └─ Go to 📊 Design & Analysis
+  └─ Use 📤 Export tab for reports
+
+
+EXAMPLE 2: Create Project & Optimize
+──────────────────────────────────────
+
+Step 1: Create Project
+  └─ Go to ⚙️ Project Setup
+  └─ Define project parameters
+  └─ Add loads and equipment
+
+Step 2: Get Equipment Sizing
+  └─ Go to 🤖 AI Tools
+  └─ Click ⚙️ Equipment Suggestions
+  └─ Review all recommendations
+  └─ Apply recommended sizes
+
+Step 3: Validate Design
+  └─ Click 💡 Design Insights
+  └─ Check design score
+  └─ Fix critical issues (red ❌)
+  └─ Implement recommendations (✅)
+
+Step 4: Finalize
+  └─ Repeat Steps 2-3 until design score >= 80
+  └─ Ensure all standards compliance checked
+  └─ Export final design
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Issue: "No project loaded"
+Solution: 
+  ├─ Create new project (go to ⚙️ Project Setup)
+  ├─ Load sample project (click 📂 Try Sample Project)
+  └─ Import Excel file (use 📥 Excel Import tab)
+
+Issue: "Add loads to your project"
+Solution:
+  ├─ Go to 🔧 Equipment Config
+  ├─ Click "Add Load"
+  ├─ Enter load details (power, voltage, type)
+  └─ Save and return to AI Tools
+
+Issue: "Equipment suggester not initialized"
+Solution:
+  ├─ Check Python dependencies installed
+  ├─ Verify llm_multimodal_processor is available
+  ├─ Verify vector_database_manager is available
+  └─ Restart application
+
+Issue: "Design score is very low"
+Solution:
+  ├─ Review "Issues Found" (red ❌)
+  ├─ Address safety concerns first
+  ├─ Check standards compliance
+  ├─ Follow recommendations (✅)
+  └─ Re-analyze to see score improvement
+
+Issue: "Excel import fails"
+Solution:
+  ├─ Verify file is .xlsx or .xls
+  ├─ Check headers in first row
+  ├─ Remove merged cells
+  ├─ Ensure equipment IDs are unique
+  ├─ Use standard electrical terminology
+  └─ Try sample templates for format reference
+
+================================================================================
+KEYBOARD & MOUSE SHORTCUTS
+================================================================================
+
+Navigation:
+  • Click menu items in left sidebar to switch pages
+  • Click tabs to switch between sections
+  • Click expand arrows [▼] to expand/collapse sections
+
+Common Actions:
+  • Click buttons to trigger analysis
+  • Scroll to see all loads in recommendations
+  • Click download buttons to save reports
+  • Use expanders [▼] to see detailed information
+
+================================================================================
+TIPS & BEST PRACTICES
+================================================================================
+
+✓ Start with 📥 Excel Import if you have spreadsheets
+✓ Always review ⚙️ Equipment Suggestions before finalizing
+✓ Check 💡 Design Insights for compliance
+✓ Fix critical issues (red ❌) before proceeding
+✓ Monitor Design Score as you iterate
+✓ Use 📊 Analytics to visualize system balance
+✓ Export results when design is complete
+✓ Compare multiple design scenarios
+✓ Keep design score >= 80 for optimal design
+✓ Address all safety concerns before implementation
+
+================================================================================
+KEY METRICS EXPLAINED
+================================================================================
+
+DESIGN SCORE (0-100)
+  └─ Overall electrical design quality
+  └─ 0-59 (Red 🔴):   Poor, needs significant work
+  └─ 60-79 (Yellow 🟡): Good, improvements recommended
+  └─ 80-100 (Green 🟢): Excellent, well optimized
+
+CABLE RECOMMENDATIONS
+  └─ Size (mm²): Cross-sectional area
+  └─ Type: Single-Core, Multi-Core, Armored
+  └─ Material: Copper (standard), Aluminum
+  └─ Insulation: XLPE, PVC, etc.
+
+BREAKER RECOMMENDATIONS
+  └─ Rating (A): Ampere capacity
+  └─ Type: MCB (≤63A), MCCB (≤160A), ACB (>160A)
+  └─ Curve: B (low), C (medium), D (high) inrush
+  └─ Capacity: Breaking capacity in kA
+
+STANDARDS COMPLIANCE
+  └─ IEC: International Electrotechnical Commission
+  └─ NEC: National Electrical Code
+  └─ Check marks: ✅ = Compliant, ❌ = Non-compliant
+
+================================================================================
+SUMMARY
+================================================================================
+
+The AI Tools page provides 4 powerful capabilities:
+
+1. 📥 Excel Import    → Import designs from spreadsheets
+2. ⚙️ Equipment       → Get intelligent sizing recommendations
+3. 💡 Insights       → Analyze design quality and validate
+4. 📊 Analytics      → Visualize system characteristics
+
+Together, these tools help you:
+  ✓ Design faster with AI recommendations
+  ✓ Ensure safety and compliance
+  ✓ Optimize equipment selection
+  ✓ Validate your electrical design
+  ✓ Understand system characteristics
+
+Start with the equipment suggestions, then validate with design insights!
+
+================================================================================
+Need Help? Check:
+  • HOW_TO_USE_AI_FEATURES.md - Detailed user guide
+  • IMPLEMENTATION_SUMMARY.md - Technical documentation
+  • AI_FEATURES_VISIBILITY_FIX.md - Enhancement details
+================================================================================
