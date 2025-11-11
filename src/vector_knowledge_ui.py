@@ -89,6 +89,10 @@ class VectorKnowledgeUI:
             try:
                 self.vector_db = get_vector_database()
                 st.sidebar.success("✅ Vector Database Connected")
+
+                # Check if collections need initialization
+                self._check_and_initialize_knowledge_base()
+
             except Exception as e:
                 st.sidebar.error(f"❌ Vector Database Error: {e}")
 
@@ -98,6 +102,34 @@ class VectorKnowledgeUI:
                 st.sidebar.success("✅ Embedding Pipeline Ready")
             except Exception as e:
                 st.sidebar.warning(f"⚠️ Embedding Pipeline Error: {e}")
+
+    def _check_and_initialize_knowledge_base(self):
+        """Check if knowledge base collections are empty and initialize with default data"""
+        if not self.vector_db:
+            return
+
+        try:
+            # Get collection statistics
+            stats = self.vector_db.get_collection_stats()
+
+            # Check if key collections are empty (excluding excel_headers which is already populated)
+            empty_collections = []
+            for collection_type in ['component_specs', 'design_patterns', 'standards']:
+                info = stats.get(collection_type, {})
+                if isinstance(info, dict) and info.get('count', 0) == 0:
+                    empty_collections.append(collection_type)
+
+            # If collections are empty, initialize default knowledge base
+            if empty_collections:
+                st.sidebar.info("🔄 Initializing knowledge base...")
+                try:
+                    self.vector_db.initialize_default_knowledge_base()
+                    st.sidebar.success("✅ Knowledge base initialized!")
+                except Exception as e:
+                    st.sidebar.error(f"❌ Failed to initialize knowledge base: {e}")
+
+        except Exception as e:
+            st.sidebar.warning(f"⚠️ Could not check knowledge base status: {e}")
 
     def render_main_ui(self):
         """Render the main knowledge management interface"""
@@ -112,10 +144,9 @@ class VectorKnowledgeUI:
         self._render_sidebar()
 
         # Main content area
-        tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        tab1, tab2, tab3, tab4 = st.tabs([
             "🔍 Search & Query",
             "📊 Analytics & Stats",
-            "📝 Knowledge Editor",
             "🔧 Management Tools",
             "📈 Performance Monitor"
         ])
@@ -127,12 +158,9 @@ class VectorKnowledgeUI:
             self._render_analytics_dashboard()
 
         with tab3:
-            self._render_knowledge_editor()
-
-        with tab4:
             self._render_management_tools()
 
-        with tab5:
+        with tab4:
             self._render_performance_monitor()
 
     def _render_sidebar(self):
@@ -391,152 +419,8 @@ class VectorKnowledgeUI:
         except Exception as e:
             st.error(f"Failed to load analytics: {e}")
 
-    def _render_knowledge_editor(self):
-        """Render knowledge editing interface"""
-        st.header("📝 Knowledge Editor")
 
-        # Collection selector
-        collections = ['excel_headers', 'component_specs', 'design_patterns', 'standards']
-        selected_collection = st.selectbox("Select Collection to Edit", collections)
 
-        # Operation tabs
-        edit_tab1, edit_tab2, edit_tab3 = st.tabs(["➕ Add Knowledge", "🔄 Update Existing", "🗑️ Delete Entries"])
-
-        with edit_tab1:
-            self._render_add_knowledge_form(selected_collection)
-
-        with edit_tab2:
-            self._render_update_knowledge_form(selected_collection)
-
-        with edit_tab3:
-            self._render_delete_knowledge_form(selected_collection)
-
-    def _render_add_knowledge_form(self, collection: str):
-        """Render form for adding new knowledge"""
-        st.subheader(f"Add New {collection.replace('_', ' ').title()}")
-
-        if collection == 'component_specs':
-            self._render_add_component_form()
-        elif collection == 'standards':
-            self._render_add_standard_form()
-        elif collection == 'design_patterns':
-            self._render_add_pattern_form()
-        elif collection == 'excel_headers':
-            self._render_add_header_mapping_form()
-
-    def _render_add_component_form(self):
-        """Form for adding component specifications"""
-        with st.form("add_component"):
-            col1, col2 = st.columns(2)
-
-            with col1:
-                component_id = st.text_input("Component ID", placeholder="e.g., motor_15kw_400v_3ph")
-                category = st.selectbox("Category", ["motor", "cable", "transformer", "switchgear", "generator"])
-                power_rating = st.number_input("Power Rating (kW)", min_value=0.0, step=0.1)
-                voltage = st.number_input("Voltage (V)", min_value=0, step=1)
-
-            with col2:
-                current = st.number_input("Current (A)", min_value=0.0, step=0.1)
-                efficiency = st.slider("Efficiency (%)", 0, 100, 85)
-                description = st.text_area("Description", height=100)
-
-            if st.form_submit_button("➕ Add Component", type="primary"):
-                component_data = {
-                    "type": category,
-                    "power_kw": power_rating if power_rating > 0 else None,
-                    "voltage": voltage if voltage > 0 else None,
-                    "current_a": current if current > 0 else None,
-                    "efficiency": efficiency / 100,
-                    "description": description
-                }
-
-                try:
-                    self.vector_db.store_component_specification(
-                        component_id, component_data, category
-                    )
-                    st.success(f"✅ Component '{component_id}' added successfully!")
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"❌ Failed to add component: {e}")
-
-    def _render_add_standard_form(self):
-        """Form for adding standards rules"""
-        with st.form("add_standard"):
-            rule_id = st.text_input("Rule ID", placeholder="e.g., iec_60364_cable_sizing")
-            standard = st.selectbox("Standard", ["IEC", "NEC", "BS", "IS"])
-            title = st.text_input("Title", placeholder="Brief rule title")
-            description = st.text_area("Description", height=80)
-            requirements = st.text_area("Requirements", height=80)
-            category = st.selectbox("Category", ["cable_sizing", "earthing", "protection", "voltage_drop"])
-
-            if st.form_submit_button("➕ Add Standard Rule", type="primary"):
-                rule_data = {
-                    "title": title,
-                    "description": description,
-                    "requirements": requirements,
-                    "category": category,
-                    "severity": "medium"
-                }
-
-                try:
-                    self.vector_db.store_standards_rule(rule_id, rule_data, standard)
-                    st.success(f"✅ Standard rule '{rule_id}' added successfully!")
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"❌ Failed to add standard rule: {e}")
-
-    def _render_add_pattern_form(self):
-        """Form for adding design patterns"""
-        st.info("Design pattern addition form would be implemented here")
-
-    def _render_add_header_mapping_form(self):
-        """Form for adding Excel header mappings"""
-        with st.form("add_header_mapping"):
-            col1, col2 = st.columns(2)
-
-            with col1:
-                header = st.text_input("Excel Header", placeholder="e.g., Power (kW)")
-                field = st.selectbox("Mapped Field", [
-                    "power_kw", "voltage", "current_a", "load_name", "cable_length",
-                    "size_sqmm", "cable_type", "from_equipment", "to_equipment"
-                ])
-
-            with col2:
-                confidence = st.slider("Confidence", 0.0, 1.0, 0.95)
-                context = st.text_input("Context", placeholder="Additional context")
-
-            if st.form_submit_button("➕ Add Header Mapping", type="primary"):
-                try:
-                    self.vector_db.store_excel_header_mapping(
-                        header=header,
-                        field=field,
-                        confidence=confidence,
-                        context=context
-                    )
-                    st.success(f"✅ Header mapping '{header}' → '{field}' added!")
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"❌ Failed to add header mapping: {e}")
-
-    def _render_update_knowledge_form(self, collection: str):
-        """Form for updating existing knowledge"""
-        st.subheader(f"Update {collection.replace('_', ' ').title()}")
-
-        # First, let user search for existing item
-        search_query = st.text_input(f"Search existing {collection.replace('_', ' ')} to update")
-
-        if search_query and st.button("🔍 Find Item"):
-            # This would implement search and selection logic
-            st.info("Search and update functionality would be implemented here")
-
-    def _render_delete_knowledge_form(self, collection: str):
-        """Form for deleting knowledge entries"""
-        st.subheader(f"Delete {collection.replace('_', ' ').title()}")
-
-        st.warning("⚠️ Deletion operations require careful consideration and would include confirmation dialogs.")
-
-        # Search and delete functionality would be implemented here
-        st.info("Safe deletion with confirmation would be implemented here")
 
     def _render_management_tools(self):
         """Render management and maintenance tools"""

@@ -224,21 +224,21 @@ class AIDesignAnalyzer:
             # Check cascade coordination
             sorted_breakers = sorted(
                 project.breakers,
-                key=lambda b: b.rating_a or 0,
+                key=lambda b: b.rated_current_a or 0,
                 reverse=True
             )
 
             for i, upstream_breaker in enumerate(sorted_breakers):
                 for downstream_breaker in sorted_breakers[i + 1:]:
                     if (
-                        upstream_breaker.rating_a
-                        and downstream_breaker.rating_a
-                        and upstream_breaker.rating_a <= downstream_breaker.rating_a
+                        upstream_breaker.rated_current_a
+                        and downstream_breaker.rated_current_a
+                        and upstream_breaker.rated_current_a <= downstream_breaker.rated_current_a
                     ):
                         result["issues"].append(
                             f"Breaker coordination issue: "
                             f"{upstream_breaker.breaker_id} "
-                            f"({upstream_breaker.rating_a}A) should be larger "
+                            f"({upstream_breaker.rated_current_a}A) should be larger "
                             f"than {downstream_breaker.breaker_id}"
                         )
                         result["is_coordinated"] = False
@@ -286,10 +286,9 @@ class AIDesignAnalyzer:
         try:
             if self.vector_db:
                 # Search for standards in vector DB
-                standards_results = self.vector_db.search(
-                    collection_name="standards",
+                standards_results = self.vector_db.search_standards(
                     query="electrical design standards voltage breaker cable",
-                    n_results=5
+                    top_k=5
                 )
 
                 # Perform basic checks
@@ -312,10 +311,9 @@ class AIDesignAnalyzer:
 
             project_summary = f"Project with {len(project.loads)} loads, voltage {project.loads[0].voltage if project.loads else 'unknown'}V"
 
-            results = self.vector_db.search(
-                collection_name="design_patterns",
+            results = self.vector_db.find_similar_designs(
                 query=project_summary,
-                n_results=3
+                top_k=3
             )
 
             if results and results.get("documents"):
@@ -338,7 +336,7 @@ class AIDesignAnalyzer:
 
         # Check for overcurrent protection
         for breaker in project.breakers:
-            if not breaker.rating_a:
+            if not breaker.rated_current_a:
                 concerns.append(f"Breaker {breaker.breaker_id}: No rating specified")
 
         return concerns
@@ -451,7 +449,7 @@ class AIDesignAnalyzer:
                 return None
 
             breaker_info = [
-                f"{b.breaker_id}: {b.rating_a}A" for b in project.breakers
+                f"{b.breaker_id}: {b.rated_current_a}A" for b in project.breakers
             ]
 
             prompt = f"""Analyze breaker coordination for this system:
@@ -484,10 +482,9 @@ class AIDesignAnalyzer:
 
             query = f"Load {load.power_kw}kW {load.voltage}V {load.load_type if hasattr(load, 'load_type') else 'general'}"
 
-            results = self.vector_db.search(
-                collection_name="component_specs",
+            results = self.vector_db.search_components(
                 query=query,
-                n_results=3
+                top_k=3
             )
 
             if results and results.get("documents"):
@@ -523,10 +520,9 @@ class AIDesignAnalyzer:
 
             query = f"Cable {cable.type} {cable.size_sqmm}mm² {cable.voltage_rating}V"
 
-            results = self.vector_db.search(
-                collection_name="standards",
+            results = self.vector_db.search_standards(
                 query=query,
-                n_results=1
+                top_k=1
             )
 
             # If no matches found, flag for review

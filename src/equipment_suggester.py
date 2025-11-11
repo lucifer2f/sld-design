@@ -558,10 +558,9 @@ class AIEquipmentSuggester:
 
             query = f"Cable {load.current_a}A {load.voltage}V copper XLPE"
 
-            results = self.vector_db.search(
-                collection_name="component_specs",
+            results = self.vector_db.search_components(
                 query=query,
-                n_results=2
+                top_k=2
             )
 
             if results and results.get("documents"):

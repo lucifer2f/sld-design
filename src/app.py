@@ -31,6 +31,7 @@ try:
     )
     from design_analyzer import AIDesignAnalyzer, DesignAnalysis
     from equipment_suggester import AIEquipmentSuggester
+    from vector_knowledge_ui import VectorKnowledgeUI
 except ImportError:
     # Fallback for direct execution
     import sys
@@ -50,6 +51,7 @@ except ImportError:
     )
     from design_analyzer import AIDesignAnalyzer, DesignAnalysis
     from equipment_suggester import AIEquipmentSuggester
+    from vector_knowledge_ui import VectorKnowledgeUI
 
 # Page configuration
 st.set_page_config(
@@ -458,6 +460,7 @@ class ElectricalDesignApp:
             "🔧 Equipment Config",
             "📊 Design & Analysis",
             "📥 Excel Extraction",
+            "🧠 Vector Knowledge",
             "ℹ️ Help"
         ]
 
@@ -531,91 +534,13 @@ class ElectricalDesignApp:
 
         return choice
 
-    def _quick_design_page(self):
-        """Super streamlined quick design workflow"""
-        st.markdown('<h1 class="main-header">🚀 Quick Electrical Design</h1>', unsafe_allow_html=True)
-        st.markdown("Complete your electrical design in just a few clicks!")
-
-        # Step 1: Choose design type
-        st.markdown("### Step 1: Choose Your Design Type")
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            if st.button("🏭 Manufacturing Plant", type="primary", use_container_width=True):
-                st.session_state.quick_design_choice = "manufacturing"
-                st.rerun()
-        with col2:
-            if st.button("🏢 Commercial Building", use_container_width=True):
-                st.session_state.quick_design_choice = "commercial"
-                st.rerun()
-        with col3:
-            if st.button("🏠 Residential Complex", use_container_width=True):
-                st.session_state.quick_design_choice = "residential"
-                st.rerun()
-
-        design_choice = st.session_state.get("quick_design_choice")
-        if design_choice:
-            with st.spinner("Creating your project..."):
-                self._create_template_project(design_choice)
-                st.success(f"✅ {design_choice.title()} project created!")
-                st.info("🔄 Running calculations...")
-                self._perform_calculations()
-                st.success("✅ Design complete!")
-                st.balloons()
-
-                # Show project summary when design is complete
-                st.markdown("### 📊 Project Summary")
-
-                col1, col2, col3, col4 = st.columns(4)
-                with col1:
-                    st.metric("Total Loads", len(self.project.loads))
-                with col2:
-                    total_power = sum(load.power_kw for load in self.project.loads)
-                    st.metric("Total Power", f"{total_power:.1f} kW")
-                with col3:
-                    st.metric("Buses", len(self.project.buses))
-                with col4:
-                    st.metric("Transformers", len(self.project.transformers))
-
-                # Load breakdown
-                if self.project.loads:
-                    st.markdown("#### Load Breakdown")
-                    load_types = {}
-                    for load in self.project.loads:
-                        load_type = load.load_type.value
-                        if load_type not in load_types:
-                            load_types[load_type] = 0
-                        load_types[load_type] += load.power_kw
-
-                    for load_type, power in load_types.items():
-                        st.write(f"• **{load_type.title()}**: {power:.1f} kW")
-
-                # Quick actions
-                st.markdown("### 🎉 Your Design is Ready!")
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    if st.button("📊 View Results", type="primary", use_container_width=True):
-                        st.session_state.selected_page = "📊 Design & Analysis"
-                        if "quick_design_choice" in st.session_state:
-                            del st.session_state.quick_design_choice
-                        st.rerun()
-                with col2:
-                    if st.button("📥 Export All", use_container_width=True):
-                        self._quick_export_all()
-                        st.success("All reports exported!")
-                with col3:
-                    if st.button("🔄 Start New Design", use_container_width=True):
-                        self._create_new_project()
-                        if "quick_design_choice" in st.session_state:
-                            del st.session_state.quick_design_choice
-                        st.rerun()
 
     def _design_analysis_page(self):
         """Consolidated design and analysis page with tabs"""
         st.markdown('<h1 class="section-header">📊 Design & Analysis</h1>', unsafe_allow_html=True)
 
         if not self.project:
-            st.warning("No project loaded. Go to Quick Design to get started.")
+            st.warning("No project loaded. Create a new project or import Excel data to get started.")
             return
 
         # Auto-run calculations if not done
@@ -1407,94 +1332,6 @@ class ElectricalDesignApp:
                         import traceback
                         st.code(traceback.format_exc(), language="python")
 
-        uploaded_file = st.file_uploader("Choose Excel file", type=['xlsx', 'xls'])
-        project_name = st.text_input("Project Name", "AI Extracted Project")
-
-        if uploaded_file and project_name:
-            if st.button("🚀 Extract with AI", type="primary", width='stretch'):
-                with st.spinner("AI extracting data..."):
-                    try:
-                        if 'unified_processor' not in st.session_state:
-                            st.session_state.unified_processor = create_unified_processor("IEC")
-
-                        success, message, project = st.session_state.unified_processor.process_excel_upload(
-                            uploaded_file, project_name
-                        )
-
-                        if success:
-                            self.project = project
-                            st.session_state.project = self.project
-                            
-                            # Show extraction summary
-                            st.success(f"✅ Extraction Complete!")
-                            
-                            # Extraction details
-                            col1, col2, col3, col4 = st.columns(4)
-                            with col1:
-                                st.metric("✓ Loads", len(self.project.loads))
-                            with col2:
-                                st.metric("✓ Buses", len(self.project.buses))
-                            with col3:
-                                st.metric("✓ Transformers", len(self.project.transformers))
-                            with col4:
-                                st.metric("✓ Cables", len(self.project.cables))
-                            
-                            # Next Steps Panel
-                            st.markdown("---")
-                            st.markdown("### 🎯 Next Steps")
-                            
-                            st.markdown("""
-                            <div style='background-color: #d4edda; padding: 15px; border-radius: 8px; border-left: 4px solid #28a745;'>
-                                <h4 style='margin-top: 0; color: #155724;'>✅ Extraction Successful!</h4>
-                                <p style='margin-bottom: 10px;'><strong>What to do next:</strong></p>
-                                <ol style='margin-bottom: 0;'>
-                                    <li>Navigate to <strong>📊 Design & Analysis</strong> to review extracted data</li>
-                                    <li>Calculations will run automatically</li>
-                                    <li>Go to <strong>🔀 SLD Diagram</strong> tab to generate your single-line diagram</li>
-                                    <li>Use <strong>📤 Export</strong> tab to download results</li>
-                                </ol>
-                            </div>
-                            """, unsafe_allow_html=True)
-                            
-                            # Show extraction report if available
-                            if hasattr(st.session_state.unified_processor, 'status') and st.session_state.unified_processor.status.extraction_report:
-                                with st.expander("📋 View Detailed Extraction Report"):
-                                    report = st.session_state.unified_processor.status.extraction_report
-                                    try:
-                                        st.json(report.to_dict())
-                                    except Exception as e:
-                                        st.error(f"Error displaying report: {str(e)}")
-                                        st.text(str(report))
-                        else:
-                            st.error(f"❌ Extraction Failed")
-                            st.error(f"{message}")
-                            
-                            # Improved error guidance
-                            with st.expander("🔧 Troubleshooting Tips", expanded=True):
-                                st.markdown("""
-                                **Common issues and solutions:**
-                                
-                                1. **File Format Issues:**
-                                   - Ensure file is .xlsx or .xls format
-                                   - Check file is not corrupted
-                                   - Try opening in Excel first to verify
-                                
-                                2. **Data Structure Issues:**
-                                   - Headers should be in first row
-                                   - Data should be in tabular format (no merged cells)
-                                   - Use standard electrical engineering terminology
-                                
-                                3. **Content Issues:**
-                                   - Verify numerical values are valid
-                                   - Check equipment IDs are unique
-                                   - Ensure voltages and power ratings are realistic
-                                
-                                4. **Try Manual Entry:**
-                                   - Go to **🔧 Equipment Config** to add equipment manually
-                                   - Use **⚙️ Project Setup** to configure your project
-                                """)
-                    except Exception as e:
-                        st.error(f"AI extraction failed: {str(e)}")
 
         # Sample files
         st.markdown("---")
@@ -1677,9 +1514,7 @@ class ElectricalDesignApp:
 
     def _main_content(self, choice):
         """Main content area based on navigation choice"""
-        if choice == "🚀 Quick Design":
-            self._quick_design_page()
-        elif choice == "🏠 Dashboard":
+        if choice == "🏠 Dashboard":
             self._dashboard_page()
         elif choice == "⚙️ Project Setup":
             self._project_setup_page()
@@ -1689,6 +1524,8 @@ class ElectricalDesignApp:
             self._design_analysis_page()
         elif choice == "📥 Excel Extraction":
             self._excel_extraction_page()
+        elif choice == "🧠 Vector Knowledge":
+            self._vector_knowledge_page()
         elif choice == "ℹ️ Help":
             self._help_page()
 
@@ -1751,12 +1588,12 @@ class ElectricalDesignApp:
             col1, col2, col3 = st.columns(3)
 
             with col1:
-                if st.button("🚀 AI Quick Design", type="primary", use_container_width=True, help="AI-guided project creation"):
-                    st.session_state.selected_page = "🚀 Quick Design"
+                if st.button("📂 Load Sample Project", type="primary", use_container_width=True, help="Explore AI features with sample data"):
+                    self._load_demo_project()
                     st.rerun()
             with col2:
-                if st.button("📂 Load Sample Project", use_container_width=True, help="Explore AI features with sample data"):
-                    self._load_demo_project()
+                if st.button("⚙️ New Project", use_container_width=True, help="Create a new electrical project"):
+                    self._create_new_project()
                     st.rerun()
             with col3:
                 if st.button("📥 AI Excel Import", use_container_width=True, help="AI-powered data extraction"):
@@ -1785,30 +1622,25 @@ class ElectricalDesignApp:
                     analysis = self.ai_analyzer.analyze_design(self.project)
                 
                 # AI Score and Alerts
-                col1, col2, col3, col4, col5 = st.columns(5)
-                
+                col1, col2, col3, col4 = st.columns(4)
+
                 with col1:
                     score_color = "🟢" if analysis.overall_score >= 80 else "🟡" if analysis.overall_score >= 60 else "🔴"
                     st.metric("AI Score", f"{analysis.overall_score:.0f}/100", delta=score_color)
-                
+
                 with col2:
                     critical_issues = len(analysis.validation_issues) + len(analysis.safety_concerns)
                     if critical_issues > 0:
                         st.metric("Critical Issues", critical_issues, delta="🚨")
                     else:
                         st.metric("Critical Issues", 0, delta="✅")
-                
+
                 with col3:
                     st.metric("Recommendations", len(analysis.recommendations), delta="💡")
-                
+
                 with col4:
                     optimization_potential = min(100 - analysis.overall_score, 40)
                     st.metric("Optimization", f"+{optimization_potential:.0f}", delta="📈")
-                
-                with col5:
-                    if st.button("🔧 AI Optimize", type="primary", help="Run comprehensive AI optimization"):
-                        self._ai_optimize_project()
-                        st.rerun()
                 
                 # Quick AI Actions
                 if analysis.validation_issues or analysis.safety_concerns or analysis.recommendations:
@@ -2094,7 +1926,6 @@ class ElectricalDesignApp:
         if completed_steps == len(steps):
             st.markdown("---")
             st.success("🎉 **Congratulations! Project Complete!**")
-            st.balloons()
             
             # Final AI recommendations
             if self.ai_analyzer:
@@ -2202,6 +2033,15 @@ class ElectricalDesignApp:
                 st.session_state.project = self.project
 
                 st.success("Project settings saved successfully!")
+
+    def _vector_knowledge_page(self):
+        """Vector Knowledge Management Interface"""
+        try:
+            vector_ui = VectorKnowledgeUI()
+            vector_ui.render_main_ui()
+        except Exception as e:
+            st.error(f"Failed to load Vector Knowledge interface: {e}")
+            st.info("Please check that all required dependencies are installed and configured properly.")
 
     def _ai_excel_extraction_page(self):
         """AI-powered Excel extraction interface"""
@@ -2676,8 +2516,8 @@ class ElectricalDesignApp:
                     power_factor=0.85,
                     efficiency=0.9,
                     cable_length=25.0,
-                    installation_method=InstallationMethod.tray,
-                    priority=Priority.essential,
+                    installation_method=InstallationMethod.TRAY,
+                    priority=Priority.ESSENTIAL,
                     source_bus="B001"
                 )
                 self.project.add_load(load)
@@ -2726,7 +2566,7 @@ class ElectricalDesignApp:
                     efficiency=0.9,
                     cable_length=30.0,
                     installation_method=InstallationMethod.conduit,
-                    priority=Priority.essential,
+                    priority=Priority.ESSENTIAL,
                     source_bus="B001"
                 )
                 self.project.add_load(load)
@@ -3196,8 +3036,14 @@ class ElectricalDesignApp:
         """Load management within system configuration"""
         st.subheader("Load Management")
 
-        # Quick load addition
-        with st.expander("➕ Quick Add Loads", expanded=False):
+        # Create tabs for different load entry methods
+        tab1, tab2 = st.tabs(["⚡ Quick Add", "📝 Manual Entry"])
+
+        # TAB 1: Quick Add Loads (templates)
+        with tab1:
+            st.markdown("### Quick Load Templates")
+            st.markdown("Select a common load type to quickly add to your project.")
+
             col1, col2 = st.columns([1, 2])
 
             with col1:
@@ -3209,11 +3055,46 @@ class ElectricalDesignApp:
                     "Conveyor Motor (11kW, 400V)": {"power": 11, "voltage": 400, "phases": 3, "type": "motor"}
                 }
 
-                template_choice = st.selectbox("Load Template", list(load_templates.keys()))
+                template_choice = st.selectbox("Load Template", list(load_templates.keys()), key="template_choice")
                 if template_choice:
                     template = load_templates[template_choice]
-                    if st.button("Add This Load"):
+                    st.markdown("**Template Details:**")
+                    st.write(f"- Power: {template['power']} kW")
+                    st.write(f"- Voltage: {template['voltage']} V")
+                    st.write(f"- Phases: {template['phases']}")
+                    st.write(f"- Type: {template['type']}")
+
+                    if st.button("➕ Add This Load", type="primary"):
                         self._add_load_from_template(template, template_choice.split(" (")[0])
+
+            with col2:
+                st.markdown("### 🤖 AI Load Suggestions")
+                if self.ai_analyzer and self.project.loads:
+                    try:
+                        # Show load type distribution
+                        load_types = {}
+                        for load in self.project.loads:
+                            load_type = load.load_type.value
+                            if load_type not in load_types:
+                                load_types[load_type] = 0
+                            load_types[load_type] += 1
+
+                        if load_types:
+                            st.write("Current load distribution:")
+                            for lt, count in load_types.items():
+                                st.write(f"- {lt.title()}: {count} loads")
+
+                            # AI recommendation for next load type
+                            most_common = max(load_types, key=load_types.get)
+                            least_common = min(load_types, key=load_types.get)
+                            if most_common != least_common:
+                                st.info(f"💡 **AI Tip:** You have mostly {most_common} loads. Consider adding a {least_common} load for better balance.")
+                    except:
+                        pass
+
+        # TAB 2: Manual Entry (comprehensive form)
+        with tab2:
+            self._add_load_form()
 
     def _add_load_from_template(self, template: dict, name: str):
         """Add a load using template data"""
@@ -3227,8 +3108,8 @@ class ElectricalDesignApp:
             power_factor=0.85,
             efficiency=0.9,
             cable_length=50.0,
-            installation_method=InstallationMethod.tray,
-            priority=Priority.essential,
+            installation_method=InstallationMethod.TRAY,
+            priority=Priority.ESSENTIAL,
             source_bus="B001" if self.project.buses else None
         )
         self.project.add_load(load)
@@ -3276,8 +3157,8 @@ class ElectricalDesignApp:
                 power_factor=0.85,
                 efficiency=0.9,
                 cable_length=50.0,
-                installation_method=InstallationMethod.tray,
-                priority=Priority.essential,
+                installation_method=InstallationMethod.TRAY,
+                priority=Priority.ESSENTIAL,
                 source_bus="B001" if self.project.buses else None
             )
             self.project.add_load(load)
@@ -3410,18 +3291,21 @@ class ElectricalDesignApp:
             st.warning("Please create or load a project first.")
             return
 
-        tab1, tab2, tab3, tab4 = st.tabs(["🚌 Buses", "🔌 Transformers", "⚡ Breakers & Cables", "🤖 AI Suggestions"])
+        tab1, tab2, tab3, tab4, tab5 = st.tabs(["💡 Load Management", "🚌 Buses", "🔌 Transformers", "⚡ Breakers & Cables", "🤖 AI Suggestions"])
 
         with tab1:
-            self._bus_configuration_tab()
+            self._load_management_tab()
 
         with tab2:
-            self._transformer_configuration_tab()
+            self._bus_configuration_tab()
 
         with tab3:
-            self._breaker_cable_tab()
-        
+            self._transformer_configuration_tab()
+
         with tab4:
+            self._breaker_cable_tab()
+
+        with tab5:
             self._ai_equipment_suggestions_tab()
 
     def _bus_configuration_tab(self):
@@ -3719,16 +3603,18 @@ class ElectricalDesignApp:
                     curve = st.selectbox("Curve", ["B", "C", "D"], index=1)
                     
                     submitted = st.form_submit_button("➕ Add Breaker", type="primary")
-                    
+
                     if submitted:
                         try:
                             new_breaker = Breaker(
                                 breaker_id=breaker_id,
                                 load_id=load_id,
                                 rated_current_a=rating_a,
-                                type=breaker_type,
+                                rated_voltage_v=400.0,  # Default voltage, should match load voltage
                                 poles=poles,
-                                curve=curve
+                                breaking_capacity_ka=25.0,  # Standard breaking capacity
+                                type=breaker_type,
+                                curve_type=curve
                             )
                             if hasattr(new_breaker, 'name'):
                                 new_breaker.name = breaker_name
@@ -3772,16 +3658,26 @@ class ElectricalDesignApp:
                     cable_type = st.selectbox("Cable Type", ["Single Core", "Twin Core", "3-Phase+N+E"])
                     
                     submitted = st.form_submit_button("➕ Add Cable", type="primary")
-                    
+
                     if submitted:
                         try:
+                            # Determine cores based on cable type (simplified logic)
+                            cores = 4 if "3-phase" in cable_type.lower() or "4c" in cable_type.lower() else 3
+
                             new_cable = Cable(
                                 cable_id=cable_id,
                                 from_equipment=from_equipment,
                                 to_equipment=to_equipment,
+                                cores=cores,
                                 size_sqmm=size_sqmm,
+                                cable_type=cable_type,
+                                insulation="XLPE",  # Default insulation
                                 length_m=length_m,
-                                cable_type=cable_type
+                                installation_method=InstallationMethod.TRAY,  # Default installation method
+                                armored=False,
+                                grouping_factor=1.0,
+                                standard=self.project.standard if self.project else "IEC",
+                                temperature_rating_c=90
                             )
                             if hasattr(new_cable, 'name'):
                                 new_cable.name = cable_name
@@ -3829,13 +3725,16 @@ class ElectricalDesignApp:
                                         cable_id=f"C{load.load_id[1:]}",
                                         from_equipment=load.source_bus,
                                         to_equipment=load.load_id,
+                                        cores=3 if load.phases == 1 else 4,  # 3 for single phase + N, 4 for three phase + N
                                         size_sqmm=config['cable']['size_sqmm'],
                                         cable_type=config['cable']['type'],
-                                        length_m=10.0
+                                        insulation=config['cable'].get('insulation', 'XLPE'),
+                                        length_m=10.0,
+                                        installation_method=load.installation_method
                                     )
                                     if hasattr(new_cable, 'name'):
                                         new_cable.name = f"{load.load_name} - Cable"
-                                    
+
                                     self.project.cables.append(new_cable)
                                     st.session_state.project = self.project
                                     st.success("Cable added!")
@@ -3858,13 +3757,16 @@ class ElectricalDesignApp:
                                         breaker_id=f"BR{load.load_id[1:]}",
                                         load_id=load.load_id,
                                         rated_current_a=config['breaker']['rating_a'],
+                                        rated_voltage_v=load.voltage,
+                                        poles=load.phases,
+                                        breaking_capacity_ka=25.0,  # Standard breaking capacity
                                         type=config['breaker']['type'],
-                                        curve=config['breaker']['curve'],
-                                        poles=3
+                                        curve_type=config['breaker'].get('curve', 'C'),
+                                        standard=self.project.standard
                                     )
                                     if hasattr(new_breaker, 'name'):
                                         new_breaker.name = f"{load.load_name} - Breaker"
-                                    
+
                                     self.project.breakers.append(new_breaker)
                                     st.session_state.project = self.project
                                     st.success("Breaker added!")
